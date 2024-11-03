@@ -16,26 +16,21 @@
 
 
 # Exercise 2
-class BankAccount:
-    def set_details(self, name, balance = 0 ):
+class BankAccount():
+    def __init__(self, name, balance = 0):
         self.name = name
         self.balance = balance
-
     def display(self):
-        print('Name:', self.name)
-        print('Balance:', self.balance)
-
+        print('Name: ', self.name, '\nBalance', self.balance)
     def withdraw(self, amount):
         self.balance -= amount
-
     def deposit(self, amount):
         self.balance += amount
 
-account1 = BankAccount()
-account1.set_details('Nabeel', 1000)
-
+account1 = BankAccount('Nabeel', 1000)
+# account1.set_details('Nabeel', 1000)
 account1.display()
-
-account1.withdraw(200)
-account1.deposit(500)
+account1.withdraw(300)
+account1.display()
+account1.deposit(600)
 account1.display()
