@@ -36,14 +36,40 @@
 # account1.display()
 
 # Exercise 3
-class Product:
-    def __init__(self):
-        self.data1 = 10
-        self.__data2 = 100
-    def method1(self):
-        print('Method 1')
-    def __method2(self):
-        print('Method 2')
+# class Products:
+#     def __init__(self):
+#         self.data1 = 10
+#         self.__data2 = 20
+#     def method1(self):
+#         pass
+#     def __method2(self):
+#         print('Method 2')
+# p1 = Products()
+# print(p1._Products__method2())
 
-p = Product()
-print(p._Product__method2())
+
+# Property Decorators
+class Emplooyee:
+    def __init__(self, first, last):
+        self.firstName = first
+        self.lastName = last
+        # self.email = first + last + '@gmail.com'
+
+    @property
+    def email(self):
+        return f'{self.firstName}{self.lastName}@gmail.com'
+    
+    @property
+    def fullName(self):
+        return f'{self.firstName} {self.lastName}'
+    
+    @fullName.setter
+    def fullName(self, name):
+        first, last = name.split()
+        self.firstName = first
+        self.lastName = last
+
+e1 = Emplooyee('Nabeel', 'Saleem')
+print(e1.fullName)
+e1.fullName = 'Usama Ramzan'
+print(e1.fullName)
