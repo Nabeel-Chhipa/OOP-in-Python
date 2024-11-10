@@ -49,27 +49,93 @@
 
 
 # Property Decorators
-class Emplooyee:
-    def __init__(self, first, last):
-        self.firstName = first
-        self.lastName = last
-        # self.email = first + last + '@gmail.com'
+# class Emplooyee:
+#     def __init__(self, first, last):
+#         self.firstName = first
+#         self.lastName = last
+#         # self.email = first + last + '@gmail.com'
 
-    @property
-    def email(self):
-        return f'{self.firstName}{self.lastName}@gmail.com'
+#     @property
+#     def email(self):
+#         return f'{self.firstName}{self.lastName}@gmail.com'
     
-    @property
-    def fullName(self):
-        return f'{self.firstName} {self.lastName}'
+#     @property
+#     def fullName(self):
+#         return f'{self.firstName} {self.lastName}'
     
-    @fullName.setter
-    def fullName(self, name):
-        first, last = name.split()
-        self.firstName = first
-        self.lastName = last
+#     @fullName.setter
+#     def fullName(self, name):
+#         first, last = name.split()
+#         self.firstName = first
+#         self.lastName = last
 
-e1 = Emplooyee('Nabeel', 'Saleem')
-print(e1.fullName)
-e1.fullName = 'Usama Ramzan'
-print(e1.fullName)
+# e1 = Emplooyee('Nabeel', 'Saleem')
+# print(e1.fullName)
+# e1.fullName = 'Usama Ramzan'
+# print(e1.fullName)
+
+
+# TASK 1
+# class Book:
+    # def __init__(self, isbn, title, author, publisher, pages, price, copies):
+    #     self.isbn = isbn
+    #     self.title = title
+    #     self.author = author
+    #     self.publisher = publisher
+    #     self.pages = pages
+    #     self.price = price
+    #     self.copies = copies
+
+    # def display(self):
+        # data = [self.isbn, self.title, self.price, self.copies]
+        # return data
+
+    # def in_stock(self):
+    #     if(self.copies > 0):
+    #         print('True')
+    #     else:
+    #         print("False")
+
+    # def sell(self):
+    #     if(self.copies > 0):
+    #         self.copies -= 1
+    #     else:
+    #         print("The book is out of stock.")
+
+# book1 = Book('957-4-36-547417-1', 'Learn Physics','Stephen', 'CBC', 350, 200,10)
+# book2 = Book('652-6-86-748413-3', 'Learn Chemistry','Jack', 'CBC', 400, 220,20)
+# book3 = Book('957-7-39-347216-2', 'Learn Maths','John', 'XYZ', 500, 300,5)
+# book4 = Book('957-7-39-347216-2', 'Learn Biology','Jack', 'XYZ', 400, 200,6)
+
+# print(book1.display())
+# print(book1.in_stock())
+# print(book1.sell())
+
+
+# TASK 2 ---------------------------
+class Book:
+    books = [
+        {
+            "title": "Learn Physics",
+            "author": "Stephen" 
+        },
+        {
+            "title": "Learn Chemistry",
+            "author": "Jack" 
+        },
+        {
+            "title": "Learn Maths",
+            "author": "John" 
+        },
+        {
+            "title": "Learn Biology",
+            "author": "Jack" 
+        },
+    ]
+
+    def display(self):
+        for book in self.books:
+            print(book)
+
+book = Book()
+book.display()
